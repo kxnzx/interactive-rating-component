@@ -20,18 +20,17 @@
         <!-- Rating Form -->
         <div class="card_form">
           <div class="card_icon">
-            <img class="star_icon" src="images/icon-star.svg" alt="star icon" />
+            <img class="star_icon" src="images/icon-star.svg" alt="" />
           </div>
-          <h1 class="card_form_title">How did we do?</h1>
-          <p class="card_form_text">
+          <h1 class="card_form_title" id="title">How did we do?</h1>
+          <p class="card_form_text" id="description">
             Please let us know how we did with your support request. All
             feedback is appreciated to help us improve our offering!
           </p>
           <!-- Form -->
-          <form>
-            <fieldset>
-              <!-- Included fieldset & legend to be semantically correct, but will style it out in CSS later with border: none; and padding: 0;-->
-              <legend></legend>
+          <form id="form">
+            <!-- Included fieldset to be semantically correct, h1 & p are linked via aria-labelledby and aria-describedby -->
+            <fieldset aria-labelledby="title" aria-describedby="description">
               <input type="radio" name="ratings" id="rating_value" value="1" />
               <label for="rating_value" class="radio_button">1</label>
 
@@ -45,9 +44,9 @@
               <label for="rating_value" class="radio_button">4</label>
 
               <input type="radio" name="ratings" id="rating_value" value="5" />
-              <label for="rating_value" class="radio_button">5</label><br />
+              <label for="rating_value" class="radio_button">5</label>
               <!--Submit Button -->
-              <input type="submit" value="Submit" id="submit_button" />
+              <input type="button" value="Submit" id="submit_button" />
             </fieldset>
           </form>
         </div>

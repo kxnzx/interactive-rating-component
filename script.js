@@ -1,10 +1,10 @@
 const ratingValue = document.getElementById(rating_value);
-const submitButton = document.getElementById(submit_button);
+const form = document.getElementById(form);
 const outputValue = document.getElementById(output_value);
-console.log(outputValue);
+console.log();
 
 function result() {
   outputValue.innerHTML = ratingValue.value;
 }
 
-submitButton.addEventListener("click", result);
+form.addEventListener("submit", result);
