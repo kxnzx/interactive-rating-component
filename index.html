@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="stylesheet/style.css" />
+
     <link
       rel="icon"
       type="image/png"
@@ -16,58 +16,62 @@
   <body>
     <!-- Main element is included for good practice & accessibility -->
     <main>
-      <div class="card">
-        <!-- Card Rating Form -->
-        <div class="card_rating-form">
-          <div class="card_star-icon">
-            <img
-              src="images/icon-star.svg"
-              alt="star icon"
-              class="card_star-image"
-            />
+      <div class="card_container">
+        <!-- Rating Form -->
+        <div class="card_form">
+          <div class="card_icon">
+            <img class="star_icon" src="images/icon-star.svg" alt="star icon" />
           </div>
-          <h1>How did we do?</h1>
-          <p>
+          <h1 class="card_form_title">How did we do?</h1>
+          <p class="card_form_text">
             Please let us know how we did with your support request. All
             feedback is appreciated to help us improve our offering!
           </p>
-          <form class="card_radio-form">
-            <input type="radio" name="rating" id="rate1" value="1" />
-            <label for="1" class="radio_button">1</label>
-            <input type="radio" name="rating" id="rate2" value="2" />
-            <label for="2" class="radio_button">2</label>
-            <input type="radio" name="rating" id="rate3" value="3" />
-            <label for="3" class="radio_button">3</label>
-            <input type="radio" name="rating" id="rate4" value="4" />
-            <label for="4" class="radio_button">4</label>
-            <input type="radio" name="rating" id="rate5" value="5" />
-            <label for="5" class="radio_button">5</label>
+          <!-- Form -->
+          <form>
+            <fieldset>
+              <!-- Included fieldset & legend to be semantically correct, but will style it out in CSS later with border: none; and padding: 0;-->
+              <legend></legend>
+              <input type="radio" name="ratings" id="rating_value" value="1" />
+              <label for="rating_value" class="radio_button">1</label>
+
+              <input type="radio" name="ratings" id="rating_value" value="2" />
+              <label for="rating_value" class="radio_button">2</label>
+
+              <input type="radio" name="ratings" id="rating_value" value="3" />
+              <label for="rating_value" class="radio_button">3</label>
+
+              <input type="radio" name="ratings" id="rating_value" value="4" />
+              <label for="rating_value" class="radio_button">4</label>
+
+              <input type="radio" name="ratings" id="rating_value" value="5" />
+              <label for="rating_value" class="radio_button">5</label><br />
+              <!--Submit Button -->
+              <input type="submit" value="Submit" id="submit_button" />
+            </fieldset>
           </form>
-          <button type="submit" class="card_button">Submit</button>
         </div>
-        <!-- End Card Rating Form -->
-        <!-- Thank You POP-UP Card -->
-        <div class="card_pop-up obscure">
+        <!--Thank You! -->
+        <div class="card_form_message">
           <img
+            class="card_form_message_image"
             src="images/illustration-thank-you.svg"
-            alt="thank you"
-            class="card_pop-up_image"
+            alt="thank you receipt"
           />
-          <div class="card_result">
-            <p class="card_result_message">
-              You selected <span class="card_score">4</span>
-              out of 5
-            </p>
-          </div>
-          <h1 class="card_pop-up_message">Thank you!</h1>
-          <p class="card_pop-up_text">
+          <p class="card_form_result">
+            You selected
+            <span id="output_value"></span>
+            out of 5
+          </p>
+          <h2 class="card_form_message_title">Thank you!</h2>
+          <p class="card_form_message_text">
             We appreciate you taking the time to give a rating. If you ever need
             more support, don’t hesitate to get in touch!
           </p>
         </div>
-        <!-- End Thank You POP-UP Card -->
       </div>
     </main>
+
     <footer>
       <div class="attribution">
         Challenge by
@@ -79,6 +83,7 @@
         >.
       </div>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
