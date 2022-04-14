@@ -30,24 +30,18 @@ fieldset {
   border: none;
 }
 
-/*
-/////// When I use these customizations for the radio-buttons the functionality does not work anymore. See below:
-
-// CUSTOMIZE RADIO BUTTONS 
-// Hide radio-buttons 
 fieldset > input {
   opacity: 0;
   position: fixed;
   width: 0;
 }
 
-// Customization labels into buttons 
 fieldset > label {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: $dark_blue;
-  color: $light_grey;
+  background-color: #252d37;
+  color: #959eac;
   font-family: sans-serif, Arial;
   font-size: 16px;
   border-radius: 50%;
@@ -57,20 +51,15 @@ fieldset > label {
 }
 
 fieldset > label:hover {
-  background-color: $orange;
-  color: $white;
+  background-color: #fb7413;
+  color: #ffffff;
 }
 
-// When radio-button is selected the color of the font and background changes
 fieldset > input:checked + label {
-  background-color: $light_grey;
-  color: $white;
+  background-color: #959eac;
+  color: #ffffff;
 }
-or 
-/*.clicked {
-  background-color: $light_grey;
-  color: $white;
-}*/
+
 /*
 //// STYLES  - The styles below will be updated  - 
 body {

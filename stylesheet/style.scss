@@ -54,18 +54,17 @@ ul {
 fieldset {
   border: none;
 }
-/*
 /////// When I use these customizations for the radio-buttons the functionality does not work anymore. See below:
 
-// CUSTOMIZE RADIO BUTTONS 
-// Hide radio-buttons 
+// CUSTOMIZE RADIO BUTTONS
+// Hide radio-buttons
 fieldset > input {
   opacity: 0;
   position: fixed;
   width: 0;
 }
 
-// Customization labels into buttons 
+// Customization labels into buttons
 fieldset > label {
   display: inline-flex;
   justify-content: center;
@@ -90,11 +89,6 @@ fieldset > input:checked + label {
   background-color: $light_grey;
   color: $white;
 }
-or 
-/*.clicked {
-  background-color: $light_grey;
-  color: $white;
-}*/
 
 /*
 //// STYLES  - The styles below will be updated  - 
