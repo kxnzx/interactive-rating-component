@@ -1,4 +1,4 @@
-/*// GOOGLE FONTS
+// GOOGLE FONTS
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
 // VARIABLES
 // Colors
@@ -46,13 +46,58 @@ body {
 ul {
   list-style: none;
 }
+//Toggle
+.hide {
+  display: none;
+}
+//Remove border fieldset
+fieldset {
+  border: none;
+}
+/*
+/////// When I use these customizations for the radio-buttons the functionality does not work anymore. See below:
 
-input {
+// CUSTOMIZE RADIO BUTTONS 
+// Hide radio-buttons 
+fieldset > input {
   opacity: 0;
   position: fixed;
   width: 0;
 }
-// STYLES
+
+// Customization labels into buttons 
+fieldset > label {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark_blue;
+  color: $light_grey;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  border-radius: 50%;
+  width: 2.7em;
+  height: 2.7em;
+  cursor: pointer;
+}
+
+fieldset > label:hover {
+  background-color: $orange;
+  color: $white;
+}
+
+// When radio-button is selected the color of the font and background changes
+fieldset > input:checked + label {
+  background-color: $light_grey;
+  color: $white;
+}
+or 
+/*.clicked {
+  background-color: $light_grey;
+  color: $white;
+}*/
+
+/*
+//// STYLES  - The styles below will be updated  - 
 body {
   display: grid;
   place-items: center;

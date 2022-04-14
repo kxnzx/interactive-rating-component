@@ -22,193 +22,224 @@ ul {
   list-style: none;
 }
 
-input {
+.hide {
+  display: none;
+}
+
+fieldset {
+  border: none;
+}
+
+/*
+/////// When I use these customizations for the radio-buttons the functionality does not work anymore. See below:
+
+// CUSTOMIZE RADIO BUTTONS 
+// Hide radio-buttons 
+fieldset > input {
   opacity: 0;
   position: fixed;
   width: 0;
 }
 
-body {
-  display: grid;
-  place-items: center;
-  font-family: "Overpass", sans-serif;
-  background-color: #121417;
-}
-body main {
-  position: relative;
-}
-body main .card {
-  background: linear-gradient(#1e252f, #161b22);
-  max-width: 21.5rem;
-  border-radius: 15px;
-  padding: 1.5rem 1.5rem 1.8rem;
-}
-@media screen and (min-width: 1024px) {
-  body main .card {
-    max-width: 25.75rem;
-    border-radius: 30px;
-    padding: 2rem 2rem 2.3rem;
-  }
-}
-body main .card h1 {
-  color: #ffffff;
-  font-weight: 400;
-  font-size: 1.375rem;
-  margin-bottom: 0.938rem;
-}
-@media screen and (min-width: 1024px) {
-  body main .card h1 {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
-  }
-}
-body main .card p {
-  color: #959eac;
-  font-size: 0.938rem;
-  line-height: 1.6;
-}
-body main .card .card_rating-form .card_star-icon {
-  background-color: #252d37;
-  display: inline-block;
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: grid;
-  place-items: center;
-  margin-bottom: 1.125rem;
-}
-@media screen and (min-width: 1024px) {
-  body main .card .card_rating-form .card_star-icon {
-    width: 3rem;
-    height: 3rem;
-    margin-bottom: 2rem;
-  }
-}
-body main .card .card_rating-form .card_star-icon .card_star-image {
-  width: 0.938rem;
-}
-body main .card .card_rating-form .card_radio-form {
-  margin-top: 1.75rem;
-  color: #959eac;
-  font-size: 0.938rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-body main .card .card_rating-form .card_radio-form .radio_button {
-  background-color: #252d37;
+// Customization labels into buttons 
+fieldset > label {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark_blue;
+  color: $light_grey;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
   border-radius: 50%;
   width: 2.7em;
   height: 2.7em;
+  cursor: pointer;
+}
+
+fieldset > label:hover {
+  background-color: $orange;
+  color: $white;
+}
+
+// When radio-button is selected the color of the font and background changes
+fieldset > input:checked + label {
+  background-color: $light_grey;
+  color: $white;
+}
+or 
+/*.clicked {
+  background-color: $light_grey;
+  color: $white;
+}*/
+/*
+//// STYLES  - The styles below will be updated  - 
+body {
   display: grid;
   place-items: center;
-  cursor: pointer;
-}
-@media screen and (min-width: 1024px) {
-  body main .card .card_rating-form .card_radio-form .radio_button {
-    width: 3.2em;
-    height: 3.2em;
+  font-family: $ff;
+  background-color: $very_dark_blue;
+  main {
+    position: relative;
+    .card {
+      background: linear-gradient(#1e252f, #161b22);
+      max-width: 21.5rem;
+      border-radius: 15px;
+      padding: 1.5rem 1.5rem 1.8rem;
+      @media screen and (min-width: $desktop) {
+        max-width: 25.75rem;
+        border-radius: 30px;
+        padding: 2rem 2rem 2.3rem;
+      }
+      h1 {
+        color: $white;
+        font-weight: $regular;
+        font-size: 1.375rem;
+        margin-bottom: 0.938rem;
+        @media screen and (min-width: $desktop) {
+          font-size: 1.75rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+      p {
+        color: $light_grey;
+        font-size: $fs;
+        line-height: 1.6;
+      }
+      .card_rating-form {
+        .card_star-icon {
+          background-color: $dark_blue;
+          display: inline-block;
+          border-radius: 50%;
+          width: 2.5rem;
+          height: 2.5rem;
+          display: grid;
+          place-items: center;
+          margin-bottom: 1.125rem;
+          @media screen and (min-width: $desktop) {
+            width: 3rem;
+            height: 3rem;
+            margin-bottom: 2rem;
+          }
+          .card_star-image {
+            width: 0.938rem;
+          }
+        }
+        .card_radio-form {
+          margin-top: 1.75rem;
+          color: $light_grey;
+          font-size: $fs;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .radio_button {
+            background-color: $dark_blue;
+            border-radius: 50%;
+            width: 2.7em;
+            height: 2.7em;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            @media screen and (min-width: $desktop) {
+              width: 3.2em;
+              height: 3.2em;
+            }
+            &:hover {
+              background-color: $orange;
+              color: $white;
+              transition: all 0.5s ease;
+            }
+          }
+          // When radio button is clicked it turns grey
+          .clicked_radio_button {
+            background-color: $light_grey;
+            color: $white;
+          }
+        }
+        .card_button {
+          background-color: $orange;
+          border: none;
+          padding: 1.1em;
+          border-radius: 30px;
+          color: $white;
+          text-transform: uppercase;
+          letter-spacing: 0.125rem;
+          font-weight: $bold;
+          width: 100%;
+          margin-top: 1.5rem;
+          cursor: pointer;
+          @media screen and (min-width: $desktop) {
+            margin-top: 2rem;
+          }
+          &:hover {
+            background-color: $white;
+            color: $orange;
+            transition: all 0.5s ease;
+          }
+        }
+      }
+      .card_pop-up {
+        text-align: center;
+        .card_pop-up_image {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 0.7rem;
+          max-width: 8.75rem;
+          @media screen and (min-width: $desktop) {
+            margin-top: 1.25rem;
+            max-width: 10.313rem;
+          }
+        }
+        .card_result {
+          background-color: $dark_blue;
+          border-radius: 30px;
+          max-width: 10.625rem;
+          padding: 0.3em 0;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 1.563rem;
+          @media screen and (min-width: $desktop) {
+            padding: 0.2em 0.5em;
+            margin-top: 2.063rem;
+            max-width: 12.188rem;
+          }
+          .card_result_message {
+            color: $orange;
+            font-size: 0.875rem;
+            @media screen and (min-width: $desktop) {
+              font-size: 1rem;
+            }
+          }
+        }
+        .card_pop-up_message {
+          margin-top: 1.875rem;
+          margin-bottom: 0.813rem;
+          @media screen and (min-width: $desktop) {
+            margin-top: 2.5rem;
+            margin-bottom: 0.625rem;
+          }
+        }
+        .card_pop-up_text {
+          @media screen and (min-width: $desktop) {
+            max-width: 21.25rem;
+            margin-bottom: 0.625rem;
+          }
+        }
+      }
+      .obscure {
+        display: none;
+      }
+    }
+  }
+  footer {
+    position: absolute;
+    bottom: 0;
+    .attribution {
+      color: $light_grey;
+      a {
+        color: $white;
+      }
+    }
   }
 }
-body main .card .card_rating-form .card_radio-form .radio_button:hover {
-  background-color: #fb7413;
-  color: #ffffff;
-  transition: all 0.5s ease;
-}
-body main .card .card_rating-form .card_radio-form .clicked_radio_button {
-  background-color: #959eac;
-  color: #ffffff;
-}
-body main .card .card_rating-form .card_button {
-  background-color: #fb7413;
-  border: none;
-  padding: 1.1em;
-  border-radius: 30px;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.125rem;
-  font-weight: 700;
-  width: 100%;
-  margin-top: 1.5rem;
-  cursor: pointer;
-}
-@media screen and (min-width: 1024px) {
-  body main .card .card_rating-form .card_button {
-    margin-top: 2rem;
-  }
-}
-body main .card .card_rating-form .card_button:hover {
-  background-color: #ffffff;
-  color: #fb7413;
-  transition: all 0.5s ease;
-}
-body main .card .card_pop-up {
-  text-align: center;
-}
-body main .card .card_pop-up .card_pop-up_image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.7rem;
-  max-width: 8.75rem;
-}
-@media screen and (min-width: 1024px) {
-  body main .card .card_pop-up .card_pop-up_image {
-    margin-top: 1.25rem;
-    max-width: 10.313rem;
-  }
-}
-body main .card .card_pop-up .card_result {
-  background-color: #252d37;
-  border-radius: 30px;
-  max-width: 10.625rem;
-  padding: 0.3em 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.563rem;
-}
-@media screen and (min-width: 1024px) {
-  body main .card .card_pop-up .card_result {
-    padding: 0.2em 0.5em;
-    margin-top: 2.063rem;
-    max-width: 12.188rem;
-  }
-}
-body main .card .card_pop-up .card_result .card_result_message {
-  color: #fb7413;
-  font-size: 0.875rem;
-}
-@media screen and (min-width: 1024px) {
-  body main .card .card_pop-up .card_result .card_result_message {
-    font-size: 1rem;
-  }
-}
-body main .card .card_pop-up .card_pop-up_message {
-  margin-top: 1.875rem;
-  margin-bottom: 0.813rem;
-}
-@media screen and (min-width: 1024px) {
-  body main .card .card_pop-up .card_pop-up_message {
-    margin-top: 2.5rem;
-    margin-bottom: 0.625rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  body main .card .card_pop-up .card_pop-up_text {
-    max-width: 21.25rem;
-    margin-bottom: 0.625rem;
-  }
-}
-body main .card .obscure {
-  display: none;
-}
-body footer {
-  position: absolute;
-  bottom: 0;
-}
-body footer .attribution {
-  color: #959eac;
-}
-body footer .attribution a {
-  color: #ffffff;
-}/*# sourceMappingURL=style.css.map */
+*//*# sourceMappingURL=style.css.map */

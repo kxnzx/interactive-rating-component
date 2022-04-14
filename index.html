@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="stylesheet" href="stylesheet/style.css" />
     <link
       rel="icon"
       type="image/png"
@@ -46,12 +46,14 @@
               <input type="radio" name="ratings" id="rating_value" value="5" />
               <label for="rating_value" class="radio_button">5</label>
               <!--Submit Button -->
-              <input type="button" value="Submit" id="submit_button" />
+              <button id="button" type="button" onclick="displayRadioValue()">
+                Submit
+              </button>
             </fieldset>
           </form>
         </div>
         <!--Thank You! -->
-        <div class="card_form_message">
+        <div class="card_form_message hide">
           <img
             class="card_form_message_image"
             src="images/illustration-thank-you.svg"
