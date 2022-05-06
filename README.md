@@ -32,7 +32,7 @@ Users should be able to:
 
 #### Screensize 375px - Mobile
 
-![Mobile](images/Mobile.gif)
+![Mobile](images/Mobile1.gif)
 
 ### Links
 
